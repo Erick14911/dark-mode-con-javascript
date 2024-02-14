@@ -64,6 +64,48 @@ nav {
 
 // ----- ----- ----- ----- ----- Switch ----- ----- ----- ----- ----- 
 
+.switch{
+  background-color: #343D5B;
+  border-radius: 1000px;
+  /* dashed; dotted; double; groove; ridge; inset; outset; none; */
+  border: none;
+  /* help; wait; crosshair; not-allowed; zoom-in; grap; */
+  position: relative;
+  cursor: pointer;
+  display: flex; 
+  outline: none;
+  &::after{
+    content:"";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #f1f1f1;
+    top: 0px;
+    left: 0px;
+    right: unset;
+    border-radius: 100px;
+    transition: -3 ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+  }
+  &.active{
+    background-color: orange;
+    color: black;
+    &::after{
+      right: 0px;
+      left: unset;
+    }
+  }
+  span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    /* center; right; bottom; top; */
+    display: block;
+    background: none;
+    color: #fff;
+  }
+}
 
 // ----- ----- ----- ----- ----- GRID ----- ----- ----- ----- ----- 
 
