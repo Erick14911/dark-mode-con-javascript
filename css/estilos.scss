@@ -19,6 +19,9 @@ body {
 	background: #F1F1F1;
 	font-family: 'Roboto', sans-serif;
 	transition: .3s ease all;
+        &.dark{
+          background-color: black;
+        }
 }
 
 a {
@@ -44,10 +47,16 @@ nav {
 	border-radius: 5px;
 	transition: .3s ease all;
 	box-shadow: $sombraDark;
-
+        body.dark &{
+          background-color: $grisOscuro;
+          box-shadow: $sombraLight;
+        }
 	.logotipo {
 		font-weight: 700;
 		font-family: 'Roboto', sans-serif;
+                body.dark &{
+                  color: white;
+                }
 	}
 
 	.enlaces {
@@ -55,6 +64,9 @@ nav {
 		align-items: center;
 		a {
 			margin-right: 40px;
+                        body.dark &{
+                          color: white;
+                        }
 			&:hover {
 				color: #707070;
 			}
@@ -64,6 +76,48 @@ nav {
 
 // ----- ----- ----- ----- ----- Switch ----- ----- ----- ----- ----- 
 
+.switch{
+  background-color: #343D5B;
+  border-radius: 1000px;
+  /* dashed; dotted; double; groove; ridge; inset; outset; none; */
+  border: none;
+  /* help; wait; crosshair; not-allowed; zoom-in; grap; */
+  position: relative;
+  cursor: pointer;
+  display: flex; 
+  outline: none;
+  &::after{
+    content:"";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #f1f1f1;
+    top: 0px;
+    left: 0px;
+    right: unset;
+    border-radius: 100px;
+    transition: all 300ms;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+  }
+  &.active{
+    background-color: orange;
+    color: black;
+    &::after{
+      right: 0px;
+      left: unset;
+    }
+  }
+  span img{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    /* center; right; bottom; top; */
+    display: block;
+    background: none;
+    color: #fff;
+  }
+}
 
 // ----- ----- ----- ----- ----- GRID ----- ----- ----- ----- ----- 
 
@@ -84,6 +138,10 @@ nav {
 		margin-top: 50px;
 		transition: .3s ease all;
 	
+                body.dark &{
+                  background-color: $grisOscuro;
+                  box-shadow: $sombraLight;
+                }
 		img {
 			vertical-align: top;
 			border-radius: 7px;
